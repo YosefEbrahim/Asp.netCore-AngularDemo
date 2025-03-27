@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center mb-4">Phonebook</h1>
+
+  <div class="text-center mb-2" style="display:flex;justify-content: space-between">
+    <input #searchBox (input)="search(searchBox.value)" placeholder="Search" />
+    <a class="btn btn-primary" routerLink="/Add">Add Contact</a>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.Name }}</td>
+        <td>{{ contact.PhoneNumber }}</td>
+        <td>{{ contact.Email }}</td>
+        <td>
+          <a class="btn btn-info" [routerLink]="['/Edit/', contact.Id]">Edit</a>
+          |
+          <a class="btn btn-danger" [routerLink]="['/Delete/', contact.Id]">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

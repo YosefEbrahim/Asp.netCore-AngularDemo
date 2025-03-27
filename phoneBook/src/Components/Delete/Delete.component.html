@@ -1,0 +1,21 @@
+<div class="alert alert-danger">
+  <h1>Are you sure to delete this Contact
+  </h1>
+<div>
+<div>
+  <span class="badge  alert-danger">Name :</span>
+   <span> {{content.Name }} </span>
+</div>
+<div>
+  <span class="badge alert-danger">Phone :</span>
+  <span> {{content.PhoneNumber}}</span>
+</div>
+<div>
+  <span class="badge alert-danger">Email :</span>
+  <span> {{content.Email}}</span>
+</div>
+</div>
+<br />
+<button type="button" class="btn btn-success" (click)="GoBack()">No</button> |
+<button class="btn btn-danger" type="submit" (click)="DeleteAction(content.Id)">Yes</button>
+</div>
